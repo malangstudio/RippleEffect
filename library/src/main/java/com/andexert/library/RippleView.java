@@ -42,6 +42,7 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
+import android.os.Build;
 
 
 /**
@@ -163,7 +164,8 @@ public class RippleView extends RelativeLayout {
                 timer = 0;
                 durationEmpty = -1;
                 timerEmpty = 0;
-                canvas.restore();
+                if(Build.VERSION.SDK_INT != Build.VERSION_CODES.M)
+                    canvas.restore();
                 invalidate();
                 if (onCompletionListener != null) onCompletionListener.onComplete(this);
                 return;
