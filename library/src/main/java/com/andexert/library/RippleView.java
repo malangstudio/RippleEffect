@@ -164,7 +164,7 @@ public class RippleView extends RelativeLayout {
                 timer = 0;
                 durationEmpty = -1;
                 timerEmpty = 0;
-                if(Build.VERSION.SDK_INT != Build.VERSION_CODES.M)
+                if(Build.VERSION.SDK_INT < 23)
                     canvas.restore();
                 invalidate();
                 if (onCompletionListener != null) onCompletionListener.onComplete(this);
